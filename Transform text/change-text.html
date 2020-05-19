@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transform Text</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    
+    <style>
+        body{
+            margin-left: 12%;
+            background-color: lightblue;
+        }
+        img{
+            margin-left: 30%;
+            height: 80px;
+            width: 80px;
+            float: left;
+        }
+        h1{
+            position: relative;
+            float: left;
+        }
+        textarea{
+            padding: 0.5px;
+            font-size: large;
+            font-family: 'Poppins';
+            resize: none;
+        }
+        #main{
+            font-size: large;
+            position: absolute;
+	        top:70px;
+	        bottom: 0;
+	        left: 0;
+	        right: 0;
+  	        margin: auto;
+            height: 68%;
+            width: 750px;
+            border: 1px solid black;
+            padding: 7%;
+            padding-top:1%;
+        }
+        #main #button1{
+            margin-left: 40%;
+        }
+    </style>
+
+</head>
+<body>
+    <form>
+        <div id="logo">
+            <img src="logo.jpg" alt="logo">
+            <h1>Transform Text</h1>
+        </div>
+        <div id="main">
+            
+            <p><h2>Enter Text And Generate a Secret Language Text!</h2></p>
+            <br>
+            
+            Your text Here : 
+            <div><textarea name="myinput" id="myinput" cols="50" rows="1"></textarea></div>
+            <br>
+            Your Text : 
+            <div><textarea name="same" id="same" cols="50" rows="1"></textarea></div>
+            <br>
+            Mirror Image : 
+            <div><textarea name="mirror" id="mirror" cols="50" rows="1"></textarea></div>
+            <br>
+            Water Image : 
+            <div><textarea name="water" id="water" cols="50" rows="1"></textarea></div>
+            <br>
+            Flipped Image :
+            <div><textarea name="flip" id="flip" cols="50" rows="1"></textarea></div>
+            <br>
+            <br>
+            <button type="button" id="button1" onclick="myFunction()">Transform</button>     
+        </div>
+        
+    </form>
+    <script>
+        function myFunction() {
+            var text1 = document.getElementById("myinput").value;
+            
+            document.getElementById("same").innerHTML = text1;
+            
+            document.getElementById("mirror").innerHTML = text1;
+            document.getElementById("water").innerHTML = text1;
+            document.getElementById("flip").innerHTML = text1;  
+            
+            document.getElementById("water").style.transform = "rotateX(180deg)";       /*water*/
+            document.getElementById("mirror").style.transform = "rotateY(180deg)";      /*mirror*/
+            document.getElementById("flip").style.transform = "rotateX(180deg) rotateY(180deg)"; /*flip*/
+        }
+          
+    </script>
+
+</body>
+
+</html>
